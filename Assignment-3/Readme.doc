@@ -1,0 +1,54 @@
+Part II
+Naïve Bayesian Classifier Implementation [24 points]
+In this problem, you will implement the Naive Bayes learning algorithm for binary classification
+tasks (i.e. each instance will have a class value of 0 or 1). To simplify the implementation, you
+may assume that all attributes are binary-valued (i.e. the only possible attribute values are 0
+and 1) and that there are no missing values in the training or test data.
+A sample training file (train.dat) and test file (test.dat) are available from the assignment page
+on eLearning. The same files for Windows users are also provided (train-win.dat and testwin.
+dat). In these files, only lines containing non-space characters are relevant. The first
+relevant line holds the attribute names. Each following relevant line defines a single example.
+Each column holds this example’s value for the attribute named at the head of the column. The
+last column (labeled “class”) holds the class label for the examples.
+IMPORTANT:
+• To implement the Naive Bayes classifier, you may use any of the following languages:
+R, Python, C, C++, C#, Visual Basic, Java. You are also free to use any package of these languages
+provided you specify it clearly in the README file.
+If you have any doubts, first contact the TA and then post the question on Piazza.
+. • Your program should be able to handle any binary classification task with any number of
+binary-valued attributes. Consequently, both the number and names of the attributes, as well
+as the number of training and test instances, should be determined at runtime. In other words,
+these values should not be hard-coded in your program. You can assume that the class attribute
+would always be the last one.
+• Your program should allow exactly two arguments to be specified in the command line
+invocation of your program: a training file and a test file. Your program should take these two
+arguments in the same order as they are listed above. There should be no graphical user
+interface (GUI). Any program that does not conform to the above specification will receive no
+credit.
+WHAT TO DO:
+1. Train the Naive Bayes learning algorithm on the training instances. Print to stdout the
+parameters of the classifier that were estimated from the training data (i.e., the class priors and
+the class-conditional probabilities). To exemplify, assume that the class attribute is named C
+and has two possible values, c1 and c2; furthermore, assume that there are three attributes A1,
+A2, and A3, where A1 has two possible values (x1 and x2), A2 has two possible values (y1 and
+y2), and A3 has three possible values (z1, z2, and z3). The learned 3 parameters should be
+printed according to the following format:
+P(C=c1)=0.32 P(A1=x1|c1)=0.33 P(A1=x2|c1)=0.67 P(A2=y1|c1)=0.25 P(A2=y2|c1)=0.75
+P(A3=z1|c1)=0.26 P(A3=z2|c1)=0.49 P(A3=z3|c1)=0.25
+P(C=c2)=0.68 P(A1=x1|c2)=0.22 P(A1=x2|c2)=0.78 P(A2=y1|c2)=0.91 P(A2=y2|c2)=0.09
+P(A3=z1|c2)=0.16 P(A3=z2|c2)=0.74 P(A3=z3|c2)=0.10
+In other words, all the probabilities associated with a particular class should appear in the same
+line.
+2. Use the learned classifier to classify the training instances. Print to stdout the accuracy of the
+classifier. The accuracy should be computed as the percentage of examples that were correctly
+classified. For example, if 86 of 90 examples are classified correctly, then the accuracy of the
+classifier would be 95.6%.
+Accuracy on training set (90 instances): 95.6%
+3. Use the learned classifier to classify the test instances. Print to stdout the accuracy of the
+classifier.
+Accuracy on test set (10 instances): 60.0%
+Hint: An excellent resource for NB classifier in R is available at:
+https://eight2late.wordpress.com/2015/11/06/a-gentle-introduction-to-naive-bayesclassification-
+using-r/
+Hint: If you want to know how to pass command line arguments to an R script, see this:
+https://www.r-bloggers.com/passing-arguments-to-an-r-script-from-command-lines/
